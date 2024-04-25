@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <UserSecretsId>78d22124-97e1-4d1a-84f4-6ca25fa5d392</UserSecretsId>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <LangVersion>12</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+        <RuntimeHostConfigurationOption Include="System.Drawing.EnableUnixSupport" Value="true" />
+        <PackageReference Include="Bogus" Version="35.5.0" />
+        <PackageReference Include="EasyCaching.InMemory" Version="1.9.2" />
+        <PackageReference Include="EFCoreSecondLevelCacheInterceptor" Version="4.2.3" />
+        <PackageReference Include="Google.Apis.Auth" Version="1.67.0" />
+        <PackageReference Include="MediatR" Version="12.1.1" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.0" />
+        <PackageReference Include="NLog" Version="5.2.8" />
+        <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.8" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\CVBuilder.Application\CVBuilder.Application.csproj" />
+        <ProjectReference Include="..\DataLayer\CVBuilder.Models\CVBuilder.Models.csproj" />
+        <ProjectReference Include="..\DataLayer\EntityFrameworkCore.DataEncryption\EntityFrameworkCore.DataEncryption.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="data" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="CVBuilder.EFContext">
+        <HintPath>bin\Debug\net8.0\CVBuilder.EFContext.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
