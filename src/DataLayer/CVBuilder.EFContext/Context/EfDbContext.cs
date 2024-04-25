@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.DataEncryption;
 
 namespace CVBuilder.EFContext.Context;
 
-public class IdentityEfDbContext : DbContext
+public class EfDbContext : DbContext
 {
     private readonly IEncryptionProvider _encryptionProvider;
     
-    public IdentityEfDbContext(
-        DbContextOptions<IdentityEfDbContext> options, IEncryptionProvider encryptionProvider)
+    public EfDbContext(
+        DbContextOptions<EfDbContext> options, IEncryptionProvider encryptionProvider)
         : base(options)
     {
         _encryptionProvider = encryptionProvider;

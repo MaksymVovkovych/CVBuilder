@@ -26,7 +26,7 @@ internal class UpdateResumeHandler : IRequestHandler<UpdateResumeCommand, Resume
     private readonly IRepository<ResumeHistory, int> _resumeHistoryRepository;
     private readonly IMediator _mediator;
     // private readonly IMemoryCache _cache;
-    private readonly IdentityEfDbContext _context;
+    private readonly EfDbContext _context;
 
 
     private readonly JsonSerializerOptions _options = new()
@@ -37,7 +37,7 @@ internal class UpdateResumeHandler : IRequestHandler<UpdateResumeCommand, Resume
     };
 
     public UpdateResumeHandler(IMapper mapper, IRepository<Resume, int> resumeRepository,
-        IRepository<ResumeHistory, int> resumeHistoryRepository, IMediator mediator, IdentityEfDbContext context)
+        IRepository<ResumeHistory, int> resumeHistoryRepository, IMediator mediator, EfDbContext context)
     {
         _resumeRepository = resumeRepository;
         _resumeHistoryRepository = resumeHistoryRepository;

@@ -15,11 +15,11 @@ public static class DatabaseExtension
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         
         
-        services.AddDbContext<IdentityEfDbContext>((serviceProvider, options) =>
+        services.AddDbContext<EfDbContext>((serviceProvider, options) =>
             options.UseNpgsql(connectionString,
                     opt => 
-                        // opt.MigrationsAssembly(typeof(IdentityEfDbContext).Assembly.GetName().Name)
-                        opt.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
+                         opt.MigrationsAssembly(typeof(EfDbContext).Assembly.GetName().Name)
+                        .UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
                 .AddInterceptors(serviceProvider.GetRequiredService<SecondLevelCacheInterceptor>())
         );
         

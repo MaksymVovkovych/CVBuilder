@@ -16,10 +16,10 @@ namespace CVBuilder.Repository;
 public class Repository<TEntity, TKey> : IRepository<TEntity, TKey>
     where TEntity : class, IEntity<TKey> where TKey : struct
 {
-    protected readonly IdentityEfDbContext DbContext;
+    protected readonly EfDbContext DbContext;
     protected readonly DbSet<TEntity> Entity;
 
-    public Repository(IdentityEfDbContext dataContext)
+    public Repository(EfDbContext dataContext)
     {
         DbContext = dataContext;
         Entity = dataContext.Set<TEntity>();
