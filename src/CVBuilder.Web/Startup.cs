@@ -1,22 +1,11 @@
-using System;
 using CVBuilder.Application.Core.Infrastructure.Interfaces;
 using CVBuilder.Application.Core.Settings;
 using CVBuilder.Application.Resume.Commands;
-using CVBuilder.EFContext;
-using CVBuilder.EFContext.Extensions;
 using CVBuilder.Web.Infrastructure.Extensions;
-using EasyCaching.InMemory;
-using EFCoreSecondLevelCacheInterceptor;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.DataEncryption;
-using Microsoft.EntityFrameworkCore.DataEncryption.Providers;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using OpenXmlPowerTools;
 
 namespace CVBuilder.Web;
 

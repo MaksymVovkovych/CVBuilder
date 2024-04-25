@@ -5,7 +5,6 @@ using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using CVBuilder.Application.Identity.Services.Interfaces;
 using CVBuilder.Application.Resume.Commands;
 using CVBuilder.Application.Resume.Responses.Shared;
 using CVBuilder.Models;
@@ -22,7 +21,6 @@ public class DuplicateResumeHandler : IRequestHandler<DuplicateResumeCommand, Re
 {
     private readonly IMapper _mapper;
     private readonly IRepository<Resume, int> _resumeRepository;
-    private readonly IShortUrlService _shortUrlService;
     private readonly IRepository<ResumeHistory,int> _resumeHistoryRepository;
     private readonly JsonSerializerOptions _options = new()
     {
@@ -30,10 +28,9 @@ public class DuplicateResumeHandler : IRequestHandler<DuplicateResumeCommand, Re
         WriteIndented = true
     };
     public DuplicateResumeHandler(IRepository<Resume, int> resumeRepository,
-        IShortUrlService shortUrlService, IMapper mapper, IRepository<ResumeHistory, int> resumeHistoryRepository)
+         IMapper mapper, IRepository<ResumeHistory, int> resumeHistoryRepository)
     {
         _resumeRepository = resumeRepository;
-        _shortUrlService = shortUrlService;
         _mapper = mapper;
         _resumeHistoryRepository = resumeHistoryRepository;
     }
@@ -71,19 +68,16 @@ public class DuplicateResumeHandler : IRequestHandler<DuplicateResumeCommand, Re
 
         resume.ShortUrlFullResume = new ShortUrl
         {
-            Url = _shortUrlService.GenerateShortUrl(12)
         };
 
         resume.ShortUrlIncognitoId = 0;
         resume.ShortUrlIncognito = new ShortUrl
         {
-            Url = _shortUrlService.GenerateShortUrl(12)
         };
 
         resume.ShortUrlIncognitoWithoutLogoId = 0;
         resume.ShortUrlIncognitoWithoutLogo = new ShortUrl
         {
-            Url = _shortUrlService.GenerateShortUrl(12)
         };
     }
 

@@ -55,12 +55,8 @@ public class UserController : BaseAuthApiController
     [HttpGet(ApiRoutes.User.ByRole)]
     public async Task<ActionResult> GetUserByRole(string roleName)
     {
-        var command = new GetUsersByRoleQuery
-        {
-            RoleName = roleName
-        };
-        var result = await Mediator.Send(command);
-        return Ok(result);
+      
+        return Ok(null);
     }
 
     [HttpGet(ApiRoutes.User.CurrentUser)]

@@ -5,7 +5,6 @@ using CVBuilder.Application.Resume.Commands;
 using CVBuilder.Models;
 using CVBuilder.Repository;
 using MediatR;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace CVBuilder.Application.Resume.Handlers;
 

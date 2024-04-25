@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Dynamic.Core;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -10,7 +9,6 @@ using CVBuilder.Models.Entities;
 using CVBuilder.Repository;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using OpenXmlPowerTools;
 
 namespace CVBuilder.Application.Holidays.Handlers;
 

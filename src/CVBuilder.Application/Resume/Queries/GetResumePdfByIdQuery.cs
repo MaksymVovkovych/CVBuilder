@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using CVBuilder.Application.Core.Infrastructure;
-using MediatR;
 
 namespace CVBuilder.Application.Resume.Queries;
 

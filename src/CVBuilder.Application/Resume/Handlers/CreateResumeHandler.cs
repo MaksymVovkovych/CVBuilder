@@ -5,7 +5,6 @@ using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using CVBuilder.Application.Identity.Services.Interfaces;
 using CVBuilder.Application.Resume.Commands;
 using CVBuilder.Application.Resume.Queries;
 using CVBuilder.Application.Resume.Responses.Shared;
@@ -21,10 +20,8 @@ internal class CreateResumeHandler : IRequestHandler<CreateResumeCommand, Resume
     private readonly IRepository<Language, int> _languageRepository;
     private readonly IMapper _mapper;
     private readonly IRepository<Resume, int> _resumeRepository;
-    private readonly IShortUrlService _shortUrlService;
     private readonly IRepository<Skill, int> _skillRepository;
     private readonly IRepository<ResumeHistory,int> _resumeHistoryRepository;
-    private readonly UserManager<User> _userManager;
     private readonly IMediator _mediator;
     private readonly JsonSerializerOptions _options = new()
     {
@@ -38,16 +35,12 @@ internal class CreateResumeHandler : IRequestHandler<CreateResumeCommand, Resume
         IRepository<Resume, int> resumeRepository,
         IRepository<Skill, int> skillRepository,
         IRepository<Language, int> languageRepository,
-        UserManager<User> userManager,
-        IShortUrlService shortUrlService,
         IRepository<ResumeHistory, int> resumeHistoryRepository,
         IMediator mediator)
     {
         _resumeRepository = resumeRepository;
         _skillRepository = skillRepository;
         _languageRepository = languageRepository;
-        _userManager = userManager;
-        _shortUrlService = shortUrlService;
         _resumeHistoryRepository = resumeHistoryRepository;
         _mediator = mediator;
         _mapper = mapper;
@@ -108,21 +101,18 @@ internal class CreateResumeHandler : IRequestHandler<CreateResumeCommand, Resume
     {
         resume.ShortUrlFullResume = new ShortUrl
         {
-            Url = _shortUrlService.GenerateShortUrl(12),
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow
         };
 
         resume.ShortUrlIncognito = new ShortUrl
         {
-            Url = _shortUrlService.GenerateShortUrl(12),
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow
         };
 
         resume.ShortUrlIncognitoWithoutLogo = new ShortUrl
         {
-            Url = _shortUrlService.GenerateShortUrl(12),
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow
         };
@@ -157,8 +147,6 @@ internal class CreateResumeHandler : IRequestHandler<CreateResumeCommand, Resume
 
     private async Task AssignResumeToUser(Resume resume)
     {
-        var user = await _userManager.FindByEmailAsync(resume.Email);
 
-        if (user != null) resume.OwnerId = user.Id;
     }
 }

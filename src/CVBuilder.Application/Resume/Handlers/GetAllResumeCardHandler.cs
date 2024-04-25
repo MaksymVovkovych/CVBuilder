@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,7 +7,6 @@ using CVBuilder.Application.Resume.Queries;
 using CVBuilder.Application.Resume.Responses;
 using CVBuilder.Models;
 using CVBuilder.Repository;
-using EFCoreSecondLevelCacheInterceptor;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

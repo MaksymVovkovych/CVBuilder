@@ -1,5 +1,4 @@
-﻿using System;
-using CVBuilder.Models.Entities.Interfaces;
+﻿using CVBuilder.Models.Entities.Interfaces;
 
 namespace CVBuilder.Models.Entities;
 

@@ -4,7 +4,3 @@ using MediatR;
 
 namespace CVBuilder.Application.User.Queries;
 
-public class GetUsersByRoleQuery : IRequest<List<UserResult>>
-{
-    public string RoleName { get; set; }
-}

@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace CVBuilder.Models.Entities;
+﻿namespace CVBuilder.Models.Entities;
 
 public class UserRole 
 {

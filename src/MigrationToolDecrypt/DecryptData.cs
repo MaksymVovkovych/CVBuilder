@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-
-using MigrationToolDecrypt.DbContexts;
+﻿using MigrationToolDecrypt.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace MigrationToolDecrypt;

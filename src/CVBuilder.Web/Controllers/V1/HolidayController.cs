@@ -1,8 +1,6 @@
-using System.Linq;
 using System.Threading.Tasks;
 using CVBuilder.Application.Holidays.Commands;
 using CVBuilder.Application.Holidays.Queries;
-using CVBuilder.Application.Resume.Commands;
 using CVBuilder.Web.Contracts.V1;
 using CVBuilder.Web.Contracts.V1.Requests.Holiday;
 using CVBuilder.Web.Infrastructure.BaseControllers;

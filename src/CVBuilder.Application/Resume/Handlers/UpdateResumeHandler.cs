@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -7,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using CVBuilder.Application.Resume.Commands;
-using CVBuilder.Application.Resume.Commands.SharedCommands;
 using CVBuilder.Application.Resume.Queries;
 using CVBuilder.Application.Resume.Responses.Shared;
 using CVBuilder.EFContext;
@@ -16,7 +14,6 @@ using CVBuilder.Models.Exceptions;
 using CVBuilder.Repository;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace CVBuilder.Application.Resume.Handlers;
 

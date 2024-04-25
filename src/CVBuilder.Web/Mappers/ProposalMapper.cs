@@ -1,6 +1,5 @@
 ﻿using CVBuilder.Application.Proposal.Commands;
 using CVBuilder.Application.Proposal.Queries;
-using CVBuilder.Application.Proposal.Responses;
 using CVBuilder.Web.Contracts.V1.Requests.Proposal;
 
 namespace CVBuilder.Web.Mappers;

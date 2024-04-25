@@ -4,7 +4,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using CVBuilder.EFContext.Transaction;
-using CVBuilder.Models.Entities;
 using CVBuilder.Models.Entities.Interfaces;
 
 namespace CVBuilder.Repository;

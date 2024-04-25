@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 using CVBuilder.Application.Core.Settings;
 using CVBuilder.Application.Resume.Queries;
 using CVBuilder.Application.Resume.Services.Interfaces;
-using CVBuilder.Repository;
 using MediatR;
 
 namespace CVBuilder.Application.Resume.Handlers;
-using Models.Entities;
+
 public class GetResumePdfByIdHandler : IRequestHandler<GetResumePdfByIdQuery, Stream>
 {
     private readonly AppSettings _appSettings;

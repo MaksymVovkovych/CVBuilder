@@ -18,9 +18,9 @@ public static class HostExtensions
 
         
         var services = scope.ServiceProvider;
-         await using var context = services.GetService<IdentityEfDbContext>();
+         // await using var context = services.GetService<IdentityEfDbContext>();
 
-         await context.Database.EnsureCreatedAsync();
+         // await context.Database.EnsureCreatedAsync();
          //await context.Database.MigrateAsync();
          //await DbInitializer.Initialize(context);
 

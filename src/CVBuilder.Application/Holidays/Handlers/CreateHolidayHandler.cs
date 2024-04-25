@@ -6,7 +6,6 @@ using CVBuilder.Application.Holidays.Responses;
 using CVBuilder.Models.Entities;
 using CVBuilder.Models.Exceptions;
 using CVBuilder.Repository;
-using DocumentFormat.OpenXml.Wordprocessing;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

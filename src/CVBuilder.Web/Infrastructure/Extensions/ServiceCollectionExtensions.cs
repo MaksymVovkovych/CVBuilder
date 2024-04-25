@@ -7,17 +7,11 @@ using CVBuilder.Application.Core.Infrastructure;
 using CVBuilder.Application.Core.Infrastructure.Interfaces;
 using CVBuilder.Application.Core.Settings;
 using CVBuilder.Application.Helpers;
-using CVBuilder.Application.Identity.Services;
-using CVBuilder.Application.Identity.Services.Interfaces;
-using CVBuilder.Application.User.Manager;
-using CVBuilder.EFContext;
-using CVBuilder.Models.Entities;
 using CVBuilder.Web.Infrastructure.Middlewares;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -47,7 +41,6 @@ public static class ServiceCollectionExtensions
         //add accessor to HttpContext
         services.AddHttpContextAccessor();
 
-        services.AddTransient<IAppUserManager, AppUserManager>();
 
         var appSection = configuration.GetSection("AppSettings");
         services.Configure<AppSettings>(appSection);
@@ -65,9 +58,6 @@ public static class ServiceCollectionExtensions
         swaggerSettingsSettings.Description = "";
         services.AddSingleton(swaggerSettingsSettings);
 
-        services.AddTransient<IIdentityService, IdentityService>();
-        services.AddTransient<ITokenService, TokenService>();
-        services.AddTransient<IShortUrlService, ShortUrlService>();
 
         //create engine and configure service provider
         var engine = EngineContext.Create();
@@ -142,20 +132,6 @@ public static class ServiceCollectionExtensions
 
     public static void ConfigureIdentity(this IServiceCollection services)
     {
-        services.AddIdentity<User, Role>(options =>
-            {
-                options.Password.RequiredLength = 6;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireNonAlphanumeric = false;
-                //options.SignIn.RequireConfirmedAccount = true;
-                options.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultPhoneProvider;
-                //options.Stores.ProtectPersonalData = true;
-                //options.Stores.MaxLengthForKeys = 128;
-            })
-            .AddErrorDescriber<IdentityErrorDescriber>()
-            .AddEntityFrameworkStores<IdentityEfDbContext>()
-            .AddDefaultTokenProviders();
     }
 
     public static void ConfigureJwtAuthentication(this IServiceCollection services, byte[] key)

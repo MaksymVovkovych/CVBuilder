@@ -3,7 +3,6 @@ using CVBuilder.Application.Core.Infrastructure;
 using CVBuilder.Application.Resume.Commands.SharedCommands;
 using CVBuilder.Application.Resume.Responses.Shared;
 using CVBuilder.Models;
-using MediatR;
 
 namespace CVBuilder.Application.Resume.Commands;
 

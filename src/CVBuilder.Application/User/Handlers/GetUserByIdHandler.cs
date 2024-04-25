@@ -7,8 +7,6 @@ using MediatR;
 
 namespace CVBuilder.Application.User.Handlers;
 
-using Models;
-
 public class GetUserByIdHandler : IRequestHandler<GetUserByIdQuery, UserResponse>
 {
     private readonly IRepository<Models.Entities.User, int> _userRepository;

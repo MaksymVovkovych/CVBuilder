@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using CVBuilder.Application.Proposal.Responses;
 using MediatR;
 

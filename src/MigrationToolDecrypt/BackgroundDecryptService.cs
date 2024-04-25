@@ -1,8 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore;
-using MigrationToolDecrypt.DbContexts;
-
-namespace MigrationToolDecrypt;
+﻿namespace MigrationToolDecrypt;
 
 public class BackgroundDecryptService : BackgroundService
 {

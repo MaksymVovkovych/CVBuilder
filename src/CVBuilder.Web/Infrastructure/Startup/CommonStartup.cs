@@ -1,13 +1,9 @@
-﻿using System.IO;
-using AngleSharp.Io;
-using CVBuilder.Application.Core.Constants;
+﻿using AngleSharp.Io;
 using CVBuilder.Application.Core.Infrastructure.Interfaces;
 using CVBuilder.Web.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 
 namespace CVBuilder.Web.Infrastructure.Startup;
 

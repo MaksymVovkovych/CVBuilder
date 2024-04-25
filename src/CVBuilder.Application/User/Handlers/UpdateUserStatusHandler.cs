@@ -9,8 +9,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CVBuilder.Application.User.Handlers;
 
-using Models;
-
 public class UpdateUserStatusHandler: IRequestHandler<UpdateUserStatusCommand, UserResponse>
 {
     private readonly IRepository<Models.Entities.User, int> _userRepository;

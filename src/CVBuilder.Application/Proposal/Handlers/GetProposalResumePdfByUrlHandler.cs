@@ -6,10 +6,7 @@ using CVBuilder.Application.Core.Settings;
 using CVBuilder.Application.Proposal.Queries;
 using CVBuilder.Application.Resume.Queries;
 using CVBuilder.Application.Resume.Services.Interfaces;
-using CVBuilder.Models.Entities;
-using CVBuilder.Repository;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace CVBuilder.Application.Proposal.Handlers;
 

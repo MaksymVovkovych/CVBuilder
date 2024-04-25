@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using SkiaSharp;
 
 namespace CVBuilder.Application.Data.Services.Interfaces;
 

@@ -1,6 +1,5 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using CVBuilder.Application.Skill.Commands;
 using CVBuilder.Repository;
 using MediatR;

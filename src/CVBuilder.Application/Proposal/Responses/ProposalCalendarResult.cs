@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using CVBuilder.Application.Position.Responses;
 
 namespace CVBuilder.Application.Proposal.Responses;
 

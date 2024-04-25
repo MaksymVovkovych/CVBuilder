@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using CVBuilder.Application.Identity.Services.Interfaces;
 using CVBuilder.Application.Proposal.Commands;
 using CVBuilder.Application.Proposal.Queries;
 using CVBuilder.Application.Proposal.Responses;
@@ -22,16 +21,13 @@ public class UpdateProposalHandler : IRequestHandler<UpdateProposalCommand, Prop
     private readonly IMapper _mapper;
     private readonly IMediator _mediator;
     private readonly IRepository<Proposal, int> _proposalRepository;
-    private readonly IShortUrlService _shortUrlService;
 
     public UpdateProposalHandler(IMapper mapper, IRepository<Proposal, int> proposalRepository,
-        IMediator mediator,
-        IShortUrlService shortUrlService)
+        IMediator mediator)
     {
         _mapper = mapper;
         _proposalRepository = proposalRepository;
         _mediator = mediator;
-        _shortUrlService = shortUrlService;
     }
 
     public async Task<ProposalResult> Handle(UpdateProposalCommand request, CancellationToken cancellationToken)
@@ -64,7 +60,6 @@ public class UpdateProposalHandler : IRequestHandler<UpdateProposalCommand, Prop
                     ResumeId = resumeRequest.ResumeId,
                     ShortUrl = new ShortUrl
                     {
-                        Url = _shortUrlService.GenerateShortUrl()
 
                     }
                 });
@@ -81,7 +76,6 @@ public class UpdateProposalHandler : IRequestHandler<UpdateProposalCommand, Prop
                     ResumeId = resumeRequest.ResumeId,
                     ShortUrl = new ShortUrl
                     {
-                        Url = _shortUrlService.GenerateShortUrl()
 
                     }
                 });

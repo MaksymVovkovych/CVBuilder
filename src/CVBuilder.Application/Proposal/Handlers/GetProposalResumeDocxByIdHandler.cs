@@ -1,20 +1,11 @@
 ﻿using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using CVBuilder.Application.Proposal.Queries;
-using CVBuilder.Application.Resume.Queries;
-using CVBuilder.Application.Resume.Responses.Docx;
 using CVBuilder.Application.Resume.Services.DocxBuilder;
-using CVBuilder.Application.Resume.Services.Interfaces;
-using CVBuilder.Repository;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace CVBuilder.Application.Proposal.Handlers;
-
-using Models.Entities;
 
 public class GetProposalResumeDocxByIdHandler : IRequestHandler<GetProposalResumeDocxByIdQuery, Stream>
 {

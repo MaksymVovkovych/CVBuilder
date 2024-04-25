@@ -1,5 +1,4 @@
 using System;
-using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace CVBuilder.Application.Holidays.Responses;
 

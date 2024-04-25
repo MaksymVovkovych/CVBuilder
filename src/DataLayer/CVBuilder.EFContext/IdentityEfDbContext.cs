@@ -1,6 +1,5 @@
 ﻿using CVBuilder.EFContext.Configurations;
 using CVBuilder.Models.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.DataEncryption;
 

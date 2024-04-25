@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using CVBuilder.Application.Core.Settings;
 using CVBuilder.EFContext;
@@ -31,10 +30,10 @@ public static class EncryptedMigratorExtension
         
         
         
-        var migrationProvider = new MigrationProvider(encryptor);
+        // var migrationProvider = new MigrationProvider(encryptor);
 
         
-        services.AddSingleton<IEncryptionProvider>(migrationProvider);
+        // services.AddSingleton<IEncryptionProvider>(migrationProvider);
         services.AddSingleton<IEncryptionProvider>(encryptor);
 
         return services;
@@ -45,16 +44,16 @@ public static class EncryptedMigratorExtension
         using var scope = host.Services.CreateScope();
 
         var services = scope.ServiceProvider;
-        await using var context = services.GetService<IdentityEfDbContext>();
-
-        await MigrateResume(context);
-        await MigrateUser(context);
-        await MigrateResumeHistory(context);
-        await MigrateExpense(context);
-        await MigrateExperience(context);
-        await MigrateProposal(context);
+        // await using var context = services.GetService<IdentityEfDbContext>();
+        //
+        // await MigrateResume(context);
+        // await MigrateUser(context);
+        // await MigrateResumeHistory(context);
+        // await MigrateExpense(context);
+        // await MigrateExperience(context);
+        // await MigrateProposal(context);
         
-        await context!.SaveChangesAsync();
+        // await context!.SaveChangesAsync();
         return host;
     }
 

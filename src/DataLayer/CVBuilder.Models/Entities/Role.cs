@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using CVBuilder.Models.Entities.Interfaces;
-using Microsoft.AspNetCore.Identity;
 
 namespace CVBuilder.Models.Entities;
 
-public class Role : IdentityRole<int>, IEntity<int>
+public class Role  : Entity<int>
 {
     public ICollection<User> Users { get; set; }
     public List<UserRole> UserRoles { get; set; }

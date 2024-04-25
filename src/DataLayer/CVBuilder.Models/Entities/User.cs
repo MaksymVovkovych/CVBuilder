@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using CVBuilder.Models.Entities.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity;
 
 namespace CVBuilder.Models.Entities;
 

@@ -1,13 +1,9 @@
-using CVBuilder.EFContext;
 using CVBuilder.Models.Entities;
 using CVBuilder.Web.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.DataEncryption;
-using Microsoft.OpenApi.Models;
 using MigrationToolDecrypt;
 using MigrationToolDecrypt.DbContexts;
-using OpenXmlPowerTools;
 
 var builder = WebApplication.CreateBuilder(args);
 

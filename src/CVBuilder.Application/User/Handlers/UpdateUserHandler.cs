@@ -8,7 +8,7 @@ using CVBuilder.Repository;
 using MediatR;
 
 namespace CVBuilder.Application.User.Handlers;
-using Models;
+
 public class UpdateUserHandler : IRequestHandler<UpdateUserCommand, UserResponse>
 {
     private readonly IMediator _mediator;

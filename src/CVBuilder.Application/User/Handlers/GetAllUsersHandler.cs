@@ -74,9 +74,9 @@ public class GetAllUsersHandler : IRequestHandler<GetAllUsersQuery, (int, List<S
                 ? query.OrderByDescending(p => p.IdentityUser.FirstName).ThenByDescending(p => p.IdentityUser.LastName)
                 : query.OrderBy(p => p.IdentityUser.FirstName).ThenBy(p => p.IdentityUser.LastName),
             "email" => request.Order == "desc" ? query.OrderByDescending(p => p.IdentityUser.Email) : query.OrderBy(p => p.IdentityUser.Email),
-            "role" => request.Order == "desc"
-                ? query.OrderByDescending(p => p.Roles.FirstOrDefault().Name)
-                : query.OrderBy(p => p.Roles.FirstOrDefault().Name),
+            // "role" => request.Order == "desc"
+            //     ? query.OrderByDescending(p => p.Roles.FirstOrDefault().Name)
+            //     : query.OrderBy(p => p.Roles.FirstOrDefault().Name),
             "createdAt" => request.Order == "desc"
                 ? query.OrderByDescending(p => p.CreatedAt)
                 : query.OrderBy(p => p.CreatedAt),

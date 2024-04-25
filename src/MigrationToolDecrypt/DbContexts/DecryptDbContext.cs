@@ -1,10 +1,8 @@
 ﻿using CVBuilder.EFContext.Configurations;
 using CVBuilder.Models.Entities;
-using CVBuilder.Models.Entities.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.DataEncryption;
 
 namespace MigrationToolDecrypt.DbContexts;
 

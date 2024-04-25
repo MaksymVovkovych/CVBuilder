@@ -1,4 +1,3 @@
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -8,7 +7,6 @@ using CVBuilder.Application.Data.Services;
 using CVBuilder.Application.Data.Services.Interfaces;
 using CVBuilder.Application.Extensions;
 using MediatR;
-using SkiaSharp;
 
 namespace CVBuilder.Application.Data.Handlers;
 

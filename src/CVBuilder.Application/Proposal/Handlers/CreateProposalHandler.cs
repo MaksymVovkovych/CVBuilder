@@ -1,11 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using CVBuilder.Application.Identity.Services.Interfaces;
 using CVBuilder.Application.Proposal.Commands;
 using CVBuilder.Application.Proposal.Queries;
 using CVBuilder.Application.Proposal.Responses;
-using CVBuilder.Models;
 using CVBuilder.Repository;
 using MediatR;
 
@@ -18,16 +16,16 @@ public class ProposalCreateHandler : IRequestHandler<CreateProposalCommand, Prop
     private readonly IMapper _mapper;
     private readonly IMediator _mediator;
     private readonly IRepository<Proposal, int> _proposalRepository;
-    private readonly IShortUrlService _shortUrlService;
 
-    public ProposalCreateHandler(IMapper mapper, IRepository<Proposal, int> proposalRepository,
-        IMediator mediator,
-        IShortUrlService shortUrlService)
+    public ProposalCreateHandler(
+        IMapper mapper, 
+        IRepository<Proposal, int> proposalRepository,
+        IMediator mediator
+        )
     {
         _mapper = mapper;
         _proposalRepository = proposalRepository;
         _mediator = mediator;
-        _shortUrlService = shortUrlService;
     }
 
     public async Task<ProposalResult> Handle(CreateProposalCommand request, CancellationToken cancellationToken)
@@ -38,7 +36,6 @@ public class ProposalCreateHandler : IRequestHandler<CreateProposalCommand, Prop
         foreach (var resume in model.Resumes)
             resume.ShortUrl = new ShortUrl
             {
-                Url = _shortUrlService.GenerateShortUrl()
             };
 
         model = await _proposalRepository.CreateAsync(model);

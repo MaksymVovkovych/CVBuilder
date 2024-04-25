@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using CVBuilder.Application.Resume.Queries;
 using CVBuilder.Application.Resume.Services.DocxBuilder;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace CVBuilder.Application.Resume.Handlers;
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using CVBuilder.Application.Resume.Queries;
@@ -8,7 +7,6 @@ using CVBuilder.Models.Entities;
 using CVBuilder.Models.Exceptions;
 using CVBuilder.Repository;
 using MediatR;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace CVBuilder.Application.Resume.Handlers;
 

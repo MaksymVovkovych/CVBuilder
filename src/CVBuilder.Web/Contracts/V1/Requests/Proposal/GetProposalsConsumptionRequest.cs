@@ -1,5 +1,4 @@
 using System;
-using Microsoft.AspNetCore.Mvc;
 
 namespace CVBuilder.Web.Contracts.V1.Requests.Proposal;
 

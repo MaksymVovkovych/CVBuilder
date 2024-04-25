@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using CVBuilder.Application.Data.Commands;
 using CVBuilder.Application.Data.Queries;

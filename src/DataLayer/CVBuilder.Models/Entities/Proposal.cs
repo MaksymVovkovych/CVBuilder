@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 using CVBuilder.Models.Entities.Interfaces;
 
 namespace CVBuilder.Models.Entities;
