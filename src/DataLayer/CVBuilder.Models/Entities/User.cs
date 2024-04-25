@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using CVBuilder.Models.Entities.Interfaces;
-using Microsoft.AspNetCore.Identity;
 
 namespace CVBuilder.Models.Entities;
 
@@ -23,14 +22,12 @@ public class User : IEntity<int>
     
     public CVBuilder.Models.Entities.IdentityUser  IdentityUser { get; set; }
 
-    [ProtectedPersonalData]
     public  string NormalizedUserName { get; set; }
 
     public int? ShortUrlId { get; set; }
 
     public ShortUrl ShortUrl { get; set; }
 
-    [ProtectedPersonalData]
     public  string NormalizedEmail { get; set; }
 
     public List<Resume> CreatedResumes { get; set; }

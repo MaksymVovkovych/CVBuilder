@@ -17,7 +17,6 @@
         <PackageReference Include="MediatR" Version="12.1.1" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -38,12 +37,6 @@
 
     <ItemGroup>
       <Folder Include="data" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Reference Include="CVBuilder.EFContext">
-        <HintPath>bin\Debug\net8.0\CVBuilder.EFContext.dll</HintPath>
-      </Reference>
     </ItemGroup>
 
 </Project>

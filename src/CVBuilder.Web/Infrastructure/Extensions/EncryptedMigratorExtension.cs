@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CVBuilder.Application.Core.Settings;
-using CVBuilder.EFContext;
-using CVBuilder.EFContext.Extensions;
 using CVBuilder.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.DataEncryption;

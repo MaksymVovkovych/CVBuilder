@@ -3,7 +3,6 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using CVBuilder.EFContext;
 
 namespace CVBuilder.Web.Infrastructure.Extensions;
 

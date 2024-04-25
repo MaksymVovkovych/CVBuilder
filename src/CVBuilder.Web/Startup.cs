@@ -1,9 +1,13 @@
+using System;
 using CVBuilder.Application.Core.Infrastructure.Interfaces;
 using CVBuilder.Application.Core.Settings;
 using CVBuilder.Application.Resume.Commands;
+using CVBuilder.EFContext.Context;
 using CVBuilder.Web.Infrastructure.Extensions;
+using EFCoreSecondLevelCacheInterceptor;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -35,7 +39,20 @@ public class Startup
 
         _configuration = configurationBuilder.Build();
 
-        services.AddDataBaseContext(_configuration);
+        // services.AddDataBaseContext(_configuration);
+        
+        var connectionString = _configuration.GetConnectionString("DefaultConnection");
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        
+        
+        services.AddDbContext<EfDbContext>((serviceProvider, options) =>
+            options.UseNpgsql(connectionString,
+                    opt => 
+                        opt.MigrationsAssembly(typeof(EfDbContext).Assembly.GetName().Name)
+                            .UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
+                .AddInterceptors(serviceProvider.GetRequiredService<SecondLevelCacheInterceptor>())
+        );
+        
         services.AddEfCoreEncrypt(_configuration);
         services.UseEfCoreCache();
         

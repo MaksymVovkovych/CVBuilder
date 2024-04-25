@@ -1,5 +1,4 @@
-﻿using CVBuilder.EFContext;
-using CVBuilder.Identity.Repositories.Interfaces;
+﻿using CVBuilder.Identity.Repositories.Interfaces;
 using CVBuilder.Models.Entities;
 
 namespace CVBuilder.Identity.Repositories;
