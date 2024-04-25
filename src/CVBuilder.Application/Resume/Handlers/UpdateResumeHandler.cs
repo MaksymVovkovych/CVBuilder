@@ -8,7 +8,7 @@ using AutoMapper;
 using CVBuilder.Application.Resume.Commands;
 using CVBuilder.Application.Resume.Queries;
 using CVBuilder.Application.Resume.Responses.Shared;
-using CVBuilder.EFContext;
+using CVBuilder.EFContext.Context;
 using CVBuilder.Models;
 using CVBuilder.Models.Exceptions;
 using CVBuilder.Repository;

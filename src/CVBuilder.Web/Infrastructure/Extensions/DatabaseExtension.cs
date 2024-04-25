@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using CVBuilder.EFContext;
 using EFCoreSecondLevelCacheInterceptor;
 using Microsoft.EntityFrameworkCore;
@@ -17,20 +15,20 @@ public static class DatabaseExtension
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         
         
-        
         services.AddDbContext<IdentityEfDbContext>((serviceProvider, options) =>
             options.UseNpgsql(connectionString,
-                    opt => opt.MigrationsAssembly(typeof(IdentityEfDbContext).Assembly.GetName().Name)
-                        .UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
+                    opt => 
+                        // opt.MigrationsAssembly(typeof(IdentityEfDbContext).Assembly.GetName().Name)
+                        opt.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
                 .AddInterceptors(serviceProvider.GetRequiredService<SecondLevelCacheInterceptor>())
         );
         
-        services.AddDbContext<IdentityEfDbContext>((serviceProvider, options) =>
-            options.UseNpgsql(connectionString,
-                    opt => opt.MigrationsAssembly(typeof(IdentityEfDbContext).Assembly.GetName().Name)
-                        .UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
-                .AddInterceptors(serviceProvider.GetRequiredService<SecondLevelCacheInterceptor>())
-        );
+        // services.AddDbContext<IdentityEfDbContext>((serviceProvider, options) =>
+        //     options.UseNpgsql(connectionString,
+        //             opt => opt.MigrationsAssembly(typeof(IdentityEfDbContext).Assembly.GetName().Name)
+        //                 .UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
+        //         .AddInterceptors(serviceProvider.GetRequiredService<SecondLevelCacheInterceptor>())
+        // );
 
         return services;
     }

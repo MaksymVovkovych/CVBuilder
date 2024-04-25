@@ -1,15 +1,16 @@
-﻿using CVBuilder.EFContext.Configurations;
+using CVBuilder.EFContext.Configurations;
 using CVBuilder.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.DataEncryption;
 
-namespace CVBuilder.EFContext;
+namespace CVBuilder.EFContext.Context;
 
 public class IdentityEfDbContext : DbContext
 {
     private readonly IEncryptionProvider _encryptionProvider;
     
-    public IdentityEfDbContext(DbContextOptions<IdentityEfDbContext> options, IEncryptionProvider encryptionProvider)
+    public IdentityEfDbContext(
+        DbContextOptions<IdentityEfDbContext> options, IEncryptionProvider encryptionProvider)
         : base(options)
     {
         _encryptionProvider = encryptionProvider;

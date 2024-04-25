@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using CVBuilder.EFContext;
+using CVBuilder.EFContext.Context;
 using CVBuilder.EFContext.Transaction;
 using CVBuilder.Models.Entities.Interfaces;
 using CVBuilder.Models.Exceptions;
